@@ -1,6 +1,8 @@
-import { createGlobalStyle } from 'styled-components';
-import { Spin } from 'antd';
+import styled, { createGlobalStyle } from 'styled-components';
+import { useState } from 'react';
+import { Radio } from 'antd';
 import 'antd/dist/antd.css';
+import { UnivariateMap } from './UnivariateMap';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -32,16 +34,6 @@ const GlobalStyle = createGlobalStyle`
   
   html { 
     font-size: 62.5%; 
-  }
-
-  .react-dropdown-select-option{
-    color:var(--black) !important;
-    background-color:var(--primary-color-light) !important;
-  }
-  .react-dropdown-select-option-label, .react-dropdown-select-option-remove{
-    font-weight: 400;
-    background-color:var(--primary-color-light);
-    padding: 0.5rem;
   }
 
   body {
@@ -122,47 +114,28 @@ const GlobalStyle = createGlobalStyle`
   .italics{
     font-style: italic;
   }
-
-  .ant-modal-close {
-    display: none !important;
-  }
-
-  .ant-select-item-option-content {
-    white-space: normal;
-  }
-
-  .ant-select-selector {
-    border-radius: 0.5rem !important;
-    background-color: var(--black-200) !important;
-  }
-  .ant-slider-mark-text {
-    font-size: 1rem !important;
-    display: none;
-    &:first-of-type {
-      display: inline;
-    }
-    &:last-of-type {
-      display: inline;
-    }
-  }
-  .ant-slider-tooltip{
-    padding: 0 !important;
-  }
-  .ant-tooltip-inner{
-    font-size: 1.4rem !important;
-    background-color: var(--black-550) !important;
-    border-radius: 0.4rem;
-  }
-  .ant-tooltip-arrow-content{
-    background-color: var(--black-550) !important;
-  }
 `;
 
-const App = () => (
-  <>
-    <GlobalStyle />
-    <Spin size='large' />
-  </>
-);
+const RadioEl = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const App = () => {
+  const [value, setValue] = useState<'AMP' | 'PrePlanning' | 'WorkPlanning'>('AMP');
+  return (
+    <>
+      <GlobalStyle />
+      <RadioEl>
+        <Radio.Group onChange={(val) => { setValue(val.target.value); }} value={value}>
+          <Radio value='AMP'>Ongoing Efforts (AMP)</Radio>
+          <Radio value='PrePlanning'>Pre-Planning (AO)</Radio>
+          <Radio value='WorkPlanning'>Work Planning (AO)</Radio>
+        </Radio.Group>
+      </RadioEl>
+      <UnivariateMap selectedValue={value} />
+    </>
+  );
+};
 
 export default App;

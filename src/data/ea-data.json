@@ -1,0 +1,325 @@
+[
+    {
+      "Code": "DZA",
+      "Country": "Algeria",
+      "Value": 3443069
+    },
+    {
+      "Code": "AGO",
+      "Country": "Angola",
+      "Value": 9024699,
+      "AMP": true,
+      "PrePlanning": true
+    },
+    {
+      "Code": "BEN",
+      "Country": "Benin",
+      "Value": 5291599,
+      "AMP": true
+    },
+    {
+      "Code": "BWA",
+      "Country": "Botswana",
+      "Value": 753006
+    },
+    {
+      "Code": "BFA",
+      "Country": "Burkina Faso",
+      "Value": 11965722,
+      "AMP": true,
+      "PrePlanning": true
+    },
+    {
+      "Code": "BDI",
+      "Country": "Burundi",
+      "Value": 9484636
+    },
+    {
+      "Code": "CMR",
+      "Country": "Cameroon",
+      "Value": 11366119
+    },
+    {
+      "Code": "CPV",
+      "Country": "Cabo Verde",
+      "Value": 70875
+    },
+    {
+      "Code": "CAF",
+      "Country": "Central African Republic",
+      "Value": 3692239,
+      "WorkPlanning": true
+    },
+    {
+      "Code": "TCD",
+      "Country": "Chad",
+      "Value": 11788743,
+      "AMP": true
+    },
+    {
+      "Code": "COM",
+      "Country": "Comoros",
+      "Value": 437411,
+      "AMP": true,
+      "PrePlanning": true
+    },
+    {
+      "Code": "COG",
+      "Country": "Congo",
+      "Value": 1442371,
+      "WorkPlanning": true
+    },
+    {
+      "Code": "DJI",
+      "Country": "Djibouti",
+      "Value": 351693,
+      "AMP": true,
+      "PrePlanning": true
+    },
+    {
+      "Code": "COD",
+      "Country": "Democratic Republic of the Congo",
+      "Value": 56484487
+    },
+    {
+      "Code": "EGY",
+      "Country": "Egypt",
+      "Value": 1087571
+    },
+    {
+      "Code": "GNQ",
+      "Country": "Equatorial Guinea",
+      "Value": 569360
+    },
+    {
+      "Code": "ERI",
+      "Country": "Eritrea",
+      "Value": 4115929
+    },
+    {
+      "Code": "SWZ",
+      "Country": "Eswatini",
+      "Value": 517875,
+      "AMP": true,
+      "PrePlanning": true
+    },
+    {
+      "Code": "ETH",
+      "Country": "Ethiopia",
+      "Value": 81602228,
+      "AMP": true,
+      "PrePlanning": true
+    },
+    {
+      "Code": "GAB",
+      "Country": "Gabon",
+      "Value": 877959
+    },
+    {
+      "Code": "GMB",
+      "Country": "Gambia",
+      "Value": 732338,
+      "WorkPlanning": true
+    },
+    {
+      "Code": "GHA",
+      "Country": "Ghana",
+      "Value": 5029653
+    },
+    {
+      "Code": "GNB",
+      "Country": "Guinea-Bissau",
+      "Value": 1238464
+    },
+    {
+      "Code": "GIN",
+      "Country": "Guinea",
+      "Value": 8069027,
+      "WorkPlanning": true
+    },
+    {
+      "Code": "CIV",
+      "Country": "Côte d'Ivoire",
+      "Value": 7080035,
+      "WorkPlanning": true
+    },
+    {
+      "Code": "KEN",
+      "Country": "Kenya",
+      "Value": 23062867
+    },
+    {
+      "Code": "LSO",
+      "Country": "Lesotho",
+      "Value": 1352176
+    },
+    {
+      "Code": "LBR",
+      "Country": "Liberia",
+      "Value": 3328340
+    },
+    {
+      "Code": "LBY",
+      "Country": "Libya",
+      "Value": 293459
+    },
+    {
+      "Code": "MDG",
+      "Country": "Madagascar",
+      "Value": 20135347,
+      "AMP": true,
+      "PrePlanning": true
+    },
+    {
+      "Code": "MWI",
+      "Country": "Malawi",
+      "Value": 12575861,
+      "AMP": true,
+      "PrePlanning": true
+    },
+    {
+      "Code": "MLI",
+      "Country": "Mali",
+      "Value": 11478681,
+      "AMP": true,
+      "WorkPlanning": true
+    },
+    {
+      "Code": "MRT",
+      "Country": "Mauritania",
+      "Value": 2230302,
+      "AMP": true,
+      "WorkPlanning": true
+    },
+    {
+      "Code": "MUS",
+      "Country": "Mauritius",
+      "Value": 170894
+    },
+    {
+      "Code": "MAR",
+      "Country": "Morocco",
+      "Value": 5472016
+    },
+    {
+      "Code": "MOZ",
+      "Country": "Mozambique",
+      "Value": 18858307
+    },
+    {
+      "Code": "NAM",
+      "Country": "Namibia",
+      "Value": 1066624
+    },
+    {
+      "Code": "NGA",
+      "Country": "Nigeria",
+      "Value": 87371720,
+      "AMP": true,
+      "PrePlanning": true
+    },
+    {
+      "Code": "NER",
+      "Country": "Niger",
+      "Value": 15728132,
+      "AMP": true
+    },
+    {
+      "Code": "RWA",
+      "Country": "Rwanda",
+      "Value": 8593322
+    },
+    {
+      "Code": "STP",
+      "Country": "Sao Tome and Principe",
+      "Value": 126150,
+      "AMP": true
+    },
+    {
+      "Code": "SEN",
+      "Country": "Senegal",
+      "Value": 5570423
+    },
+    {
+      "Code": "SYC",
+      "Country": "Seychelles",
+      "Value": 5366
+    },
+    {
+      "Code": "SLE",
+      "Country": "Sierra Leone",
+      "Value": 5425424
+    },
+    {
+      "Code": "SOM",
+      "Country": "Somalia",
+      "Value": 5309114,
+      "AMP": true,
+      "PrePlanning": true
+    },
+    {
+      "Code": "ZAF",
+      "Country": "South Africa",
+      "Value": 4230651
+    },
+    {
+      "Code": "SSD",
+      "Country": "South Sudan",
+      "Value": 10822175
+    },
+    {
+      "Code": "SDN",
+      "Country": "Sudan",
+      "Value": 17027854,
+      "AMP": true,
+      "PrePlanning": true
+    },
+    {
+      "Code": "TZA",
+      "Country": "United Republic of Tanzania",
+      "Value": 34353253
+    },
+    {
+      "Code": "TGO",
+      "Country": "Togo",
+      "Value": 2607422
+    },
+    {
+      "Code": "TUN",
+      "Country": "Tunisia",
+      "Value": 2080303
+    },
+    {
+      "Code": "UGA",
+      "Country": "Uganda",
+      "Value": 30043615
+    },
+    {
+      "Code": "ZMB",
+      "Country": "Zambia",
+      "Value": 9412446,
+      "AMP": true
+    },
+    {
+      "Code": "ZWE",
+      "Country": "Zimbabwe",
+      "Value": 9628293,
+      "WorkPlanning": true
+    },
+    {
+      "Code": "REU",
+      "Country": "Reunion"
+    },
+    {
+      "Code": "MYT",
+      "Country": "Mayotte"
+    },
+    {
+      "Code": "SHN",
+      "Country": "Saint Helena"
+    },
+    {
+      "Code": "ESH",
+      "Country": "Western Sahara"
+    }
+  ]
