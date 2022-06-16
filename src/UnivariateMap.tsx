@@ -21,7 +21,7 @@ export const UnivariateMap = (props:Props) => {
   const projection = geoMercator().rotate([0, 0]).scale(325).translate([115, 255]);
   return (
     <El>
-      <svg width='420px' height='500px' viewBox={`0 0 ${svgWidth} ${svgHeight}`} ref={mapSvg}>
+      <svg width='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`} ref={mapSvg}>
         <g ref={mapG}>
           {
             (World as any).features.map((d: any, i: number) => {
