@@ -117,11 +117,11 @@ const GlobalStyle = createGlobalStyle`
   }
   .radioLabel{
     font-size: 1.6rem;
-    font-weight: 700;
     text-transform: uppercase; 
   }
-  .ant-radio-wrapper-checked{
-    color: var(--primary-blue);
+  .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled){
+    background-color: var(--primary-blue) !important;
+    font-weight: 700;
   }
 `;
 
@@ -174,12 +174,17 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      <TitleEl>Bringing Electricity to 500 Million People (UN Target)</TitleEl>
+      <TitleEl>Bringing Electricity to 500 Million People</TitleEl>
       <RadioEl>
-        <Radio.Group onChange={(val) => { setValue(val.target.value); }} value={value}>
-          <Radio className='radioLabel' value='All'>All (AMP + AO)</Radio>
-          <Radio className='radioLabel' value='AMP'>Ongoing Efforts (AMP)</Radio>
-          <Radio className='radioLabel' value='Planned'>Planned Efforts (AO)</Radio>
+        <Radio.Group
+          onChange={(val) => { setValue(val.target.value); }}
+          value={value}
+          buttonStyle='solid'
+          size='large'
+        >
+          <Radio.Button className='radioLabel' value='All'>All (AMP + AO)</Radio.Button>
+          <Radio.Button className='radioLabel' value='AMP'>Ongoing Efforts (AMP)</Radio.Button>
+          <Radio.Button className='radioLabel' value='Planned'>Planned Efforts (AO)</Radio.Button>
         </Radio.Group>
       </RadioEl>
       <BannerInfo>
