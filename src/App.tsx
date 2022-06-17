@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Radio } from 'antd';
 import 'antd/dist/antd.css';
 import { UnivariateMap } from './UnivariateMap';
+import { UnitChart } from './UnitChart';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -114,25 +115,87 @@ const GlobalStyle = createGlobalStyle`
   .italics{
     font-style: italic;
   }
+  .radioLabel{
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase; 
+  }
+  .ant-radio-wrapper-checked{
+    color: var(--primary-blue);
+  }
 `;
 
 const RadioEl = styled.div`
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+`;
+
+const TitleEl = styled.div`
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3rem;
+  margin: 2rem 0;
+  text-align: center;
+  color: var(--primary-blue);
+`;
+
+const SubNote = styled.div`
+  font-family: 'Proxima Nova';
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--black-500);
+  margin: 1rem 0 2rem 0;
+  text-align: center;
+`;
+
+const BannerInfo = styled.div`
+  font-family: 'Proxima Nova';
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  color: var(--black-700);
+  margin: 1rem 0 2rem 0;
+  text-align: center;
+`;
+
+const SubTitle = styled.div`
+  margin: 4rem 0 2rem 0;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  text-align: center;
 `;
 
 const App = () => {
-  const [value, setValue] = useState<'AMP' | 'PrePlanning' | 'WorkPlanning'>('AMP');
+  const [value, setValue] = useState<'AMP' | 'All' | 'Planned'>('All');
   return (
     <>
       <GlobalStyle />
+      <TitleEl>Bringing Electricity to 500 Million People (UN Target)</TitleEl>
       <RadioEl>
         <Radio.Group onChange={(val) => { setValue(val.target.value); }} value={value}>
-          <Radio value='AMP'>Ongoing Efforts (AMP)</Radio>
-          <Radio value='PrePlanning'>Pre-Planning (AO)</Radio>
-          <Radio value='WorkPlanning'>Work Planning (AO)</Radio>
+          <Radio className='radioLabel' value='All'>All (AMP + AO)</Radio>
+          <Radio className='radioLabel' value='AMP'>Ongoing Efforts (AMP)</Radio>
+          <Radio className='radioLabel' value='Planned'>Planned Efforts (AO)</Radio>
         </Radio.Group>
       </RadioEl>
+      <BannerInfo>
+        Total Beneficiaries:
+        {' '}
+        <span className='bold'>
+          {value === 'All' ? '179.5 Million' : value === 'AMP' ? '29.5 Million' : '150 Million' }
+        </span>
+        {' '}
+        out of 500 million
+      </BannerInfo>
+      <UnitChart selectedValue={value} />
+      <SubNote>
+        *each circle represent 5 MilLion People
+      </SubNote>
+      <SubTitle>Targeted African countries</SubTitle>
       <UnivariateMap selectedValue={value} />
     </>
   );

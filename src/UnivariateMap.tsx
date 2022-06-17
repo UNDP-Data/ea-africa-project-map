@@ -5,7 +5,7 @@ import World from './data/worldMap.json';
 import Data from './data/ea-data.json';
 
 interface Props {
-  selectedValue: 'AMP' | 'PrePlanning' | 'WorkPlanning';
+  selectedValue: 'AMP' | 'All' | 'Planned';
 }
 
 const El = styled.div`
@@ -15,10 +15,10 @@ const El = styled.div`
 export const UnivariateMap = (props:Props) => {
   const { selectedValue } = props;
   const svgWidth = 420;
-  const svgHeight = 500;
+  const svgHeight = 475;
   const mapSvg = useRef<SVGSVGElement>(null);
   const mapG = useRef<SVGGElement>(null);
-  const projection = geoMercator().rotate([0, 0]).scale(325).translate([115, 255]);
+  const projection = geoMercator().rotate([0, 0]).scale(325).translate([115, 230]);
   return (
     <El>
       <svg width='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`} ref={mapSvg}>
@@ -49,7 +49,7 @@ export const UnivariateMap = (props:Props) => {
                           d={masterPath}
                           stroke='#AAA'
                           strokeWidth={0.25}
-                          fill={Data[index][selectedValue] ? '#006EB5' : '#DDD'}
+                          fill={selectedValue === 'All' ? Data[index].AMP || Data[index].Planned ? '#006EB5' : '#DDD' : Data[index][selectedValue] ? '#006EB5' : '#DDD'}
                         />
                       );
                     }) : d.geometry.coordinates.map((el:any, j: number) => {
@@ -65,7 +65,7 @@ export const UnivariateMap = (props:Props) => {
                           d={path}
                           stroke='#AAA'
                           strokeWidth={0.25}
-                          fill={Data[index][selectedValue] ? '#006EB5' : '#DDD'}
+                          fill={selectedValue === 'All' ? Data[index].AMP || Data[index].Planned ? '#006EB5' : '#DDD' : Data[index][selectedValue] ? '#006EB5' : '#DDD'}
                         />
                       );
                     })
