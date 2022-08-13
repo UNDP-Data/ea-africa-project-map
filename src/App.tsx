@@ -222,7 +222,7 @@ const App = () => {
       <SubNote>
         *each circle represent 5 MilLion People
       </SubNote>
-      <SubTitle>Targeted African countries</SubTitle>
+      <SubTitle>Targeted countries</SubTitle>
       <UnivariateMap selectedValue={value} />
     </>
   );
