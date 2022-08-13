@@ -223,16 +223,6 @@ const App = () => {
         *each circle represent 5 MilLion People
       </SubNote>
       <SubTitle>Targeted African countries</SubTitle>
-      <KeyContainer>
-        <KeyEl>
-          <ColorBox style={{ backgroundColor: '#3a6b35' }} />
-          <div style={{ color: '#3a6b35' }}>Round 1</div>
-        </KeyEl>
-        <KeyEl>
-          <ColorBox style={{ backgroundColor: '#cbd18f' }} />
-          <div style={{ color: '#cbd18f' }}>Round 2</div>
-        </KeyEl>
-      </KeyContainer>
       <UnivariateMap selectedValue={value} />
     </>
   );
