@@ -8,6 +8,8 @@ interface Props {
   selectedValue: 'AMP' | 'All' | 'Planned';
 }
 
+const COLOR = ['#3a6b35', '#cbd18f'];
+
 const El = styled.div`
   display: flex;
   justify-content: center;
@@ -49,7 +51,7 @@ export const UnivariateMap = (props:Props) => {
                           d={masterPath}
                           stroke='#AAA'
                           strokeWidth={0.25}
-                          fill={selectedValue === 'All' ? Data[index].AMP || Data[index].Planned ? '#006EB5' : '#DDD' : Data[index][selectedValue] ? '#006EB5' : '#DDD'}
+                          fill={selectedValue === 'All' ? Data[index].AMP || Data[index].Planned ? '#006EB5' : '#DDD' : Data[index][selectedValue] ? COLOR[Data[index][selectedValue] as number - 1] : '#DDD'}
                         />
                       );
                     }) : d.geometry.coordinates.map((el:any, j: number) => {
@@ -65,7 +67,7 @@ export const UnivariateMap = (props:Props) => {
                           d={path}
                           stroke='#AAA'
                           strokeWidth={0.25}
-                          fill={selectedValue === 'All' ? Data[index].AMP || Data[index].Planned ? '#006EB5' : '#DDD' : Data[index][selectedValue] ? '#006EB5' : '#DDD'}
+                          fill={selectedValue === 'All' ? Data[index].AMP || Data[index].Planned ? '#006EB5' : '#DDD' : Data[index][selectedValue] ? COLOR[Data[index][selectedValue] as number - 1] : '#DDD'}
                         />
                       );
                     })

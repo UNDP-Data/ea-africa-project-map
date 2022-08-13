@@ -2,20 +2,22 @@
     {
       "Code": "DZA",
       "Country": "Algeria",
-      "Value": 3443069
+      "Value": 3443069,
+      "Planned": 2
     },
     {
       "Code": "AGO",
       "Country": "Angola",
       "Value": 9024699,
-      "AMP": true,
-      "Planned": true
+      "AMP": 1,
+      "Planned": 1
     },
     {
       "Code": "BEN",
       "Country": "Benin",
       "Value": 5291599,
-      "AMP": true
+      "AMP": 2,
+      "Planned": 1
     },
     {
       "Code": "BWA",
@@ -26,8 +28,8 @@
       "Code": "BFA",
       "Country": "Burkina Faso",
       "Value": 11965722,
-      "AMP": true,
-      "Planned": true
+      "AMP": 1,
+      "Planned": 1
     },
     {
       "Code": "BDI",
@@ -48,38 +50,38 @@
       "Code": "CAF",
       "Country": "Central African Republic",
       "Value": 3692239,
-      "Planned": true
+      "Planned": 1
     },
     {
       "Code": "TCD",
       "Country": "Chad",
       "Value": 11788743,
-      "AMP": true
+      "AMP": 2
     },
     {
       "Code": "COM",
       "Country": "Comoros",
       "Value": 437411,
-      "AMP": true,
-      "Planned": true
+      "AMP": 1,
+      "Planned": 2
     },
     {
       "Code": "COG",
       "Country": "Congo",
       "Value": 1442371,
-      "Planned": true
+      "Planned": 1
     },
     {
       "Code": "DJI",
       "Country": "Djibouti",
       "Value": 351693,
-      "AMP": true,
-      "Planned": true
+      "AMP": 1
     },
     {
       "Code": "COD",
       "Country": "Democratic Republic of the Congo",
-      "Value": 56484487
+      "Value": 56484487,
+      "Planned": 1
     },
     {
       "Code": "EGY",
@@ -100,15 +102,14 @@
       "Code": "SWZ",
       "Country": "Eswatini",
       "Value": 517875,
-      "AMP": true,
-      "Planned": true
+      "AMP": 1,
+      "Planned": 2
     },
     {
       "Code": "ETH",
       "Country": "Ethiopia",
       "Value": 81602228,
-      "AMP": true,
-      "Planned": true
+      "AMP": 1
     },
     {
       "Code": "GAB",
@@ -119,7 +120,7 @@
       "Code": "GMB",
       "Country": "Gambia",
       "Value": 732338,
-      "Planned": true
+      "Planned": 1
     },
     {
       "Code": "GHA",
@@ -135,18 +136,19 @@
       "Code": "GIN",
       "Country": "Guinea",
       "Value": 8069027,
-      "Planned": true
+      "Planned": 1
     },
     {
       "Code": "CIV",
       "Country": "Côte d'Ivoire",
       "Value": 7080035,
-      "Planned": true
+      "Planned": 1
     },
     {
       "Code": "KEN",
       "Country": "Kenya",
-      "Value": 23062867
+      "Value": 23062867,
+      "Planned": 2
     },
     {
       "Code": "LSO",
@@ -167,29 +169,28 @@
       "Code": "MDG",
       "Country": "Madagascar",
       "Value": 20135347,
-      "AMP": true,
-      "Planned": true
+      "AMP": 1,
+      "Planned": 1
     },
     {
       "Code": "MWI",
       "Country": "Malawi",
       "Value": 12575861,
-      "AMP": true,
-      "Planned": true
+      "AMP": 1
     },
     {
       "Code": "MLI",
       "Country": "Mali",
       "Value": 11478681,
-      "AMP": true,
-      "Planned": true
+      "AMP": 2,
+      "Planned": 1
     },
     {
       "Code": "MRT",
       "Country": "Mauritania",
       "Value": 2230302,
-      "AMP": true,
-      "Planned": true
+      "AMP": 2,
+      "Planned": 1
     },
     {
       "Code": "MUS",
@@ -204,7 +205,8 @@
     {
       "Code": "MOZ",
       "Country": "Mozambique",
-      "Value": 18858307
+      "Value": 18858307,
+      "Planned": 2
     },
     {
       "Code": "NAM",
@@ -215,25 +217,26 @@
       "Code": "NGA",
       "Country": "Nigeria",
       "Value": 87371720,
-      "AMP": true,
-      "Planned": true
+      "AMP": 1,
+      "Planned": 2
     },
     {
       "Code": "NER",
       "Country": "Niger",
       "Value": 15728132,
-      "AMP": true
+      "AMP": 2
     },
     {
       "Code": "RWA",
       "Country": "Rwanda",
-      "Value": 8593322
+      "Value": 8593322,
+      "Planned": 2
     },
     {
       "Code": "STP",
       "Country": "Sao Tome and Principe",
       "Value": 126150,
-      "AMP": true
+      "AMP": 2
     },
     {
       "Code": "SEN",
@@ -254,8 +257,7 @@
       "Code": "SOM",
       "Country": "Somalia",
       "Value": 5309114,
-      "AMP": true,
-      "Planned": true
+      "AMP": 1
     },
     {
       "Code": "ZAF",
@@ -271,8 +273,7 @@
       "Code": "SDN",
       "Country": "Sudan",
       "Value": 17027854,
-      "AMP": true,
-      "Planned": true
+      "AMP": 1
     },
     {
       "Code": "TZA",
@@ -298,13 +299,14 @@
       "Code": "ZMB",
       "Country": "Zambia",
       "Value": 9412446,
-      "AMP": true
+      "AMP": 2,
+      "Planned": 2
     },
     {
       "Code": "ZWE",
       "Country": "Zimbabwe",
       "Value": 9628293,
-      "Planned": true
+      "Planned": 1
     },
     {
       "Code": "REU",
