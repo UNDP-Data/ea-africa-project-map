@@ -8,7 +8,9 @@ interface Props {
   selectedValue: 'AMP' | 'All' | 'Planned';
 }
 
-const COLOR = ['#3a6b35', '#cbd18f'];
+const COLOR = ['#3a6b35', '#829d60', '#cbd18f'];
+
+const CATCOLOR = ['#0B5588', '#FBB719', '#88C59A'];
 
 const El = styled.div`
   display: flex;
@@ -51,7 +53,7 @@ export const UnivariateMap = (props:Props) => {
                           d={masterPath}
                           stroke='#AAA'
                           strokeWidth={0.25}
-                          fill={selectedValue === 'All' ? Data[index].AMP || Data[index].Planned ? '#006EB5' : '#DDD' : Data[index][selectedValue] ? COLOR[Data[index][selectedValue] as number - 1] : '#DDD'}
+                          fill={selectedValue === 'All' ? Data[index].AMP && Data[index].Planned ? CATCOLOR[0] : Data[index].AMP ? CATCOLOR[1] : Data[index].Planned ? CATCOLOR[2] : '#EDEDED' : Data[index][selectedValue] ? COLOR[Data[index][selectedValue] as number - 1] : '#EDEDED'}
                         />
                       );
                     }) : d.geometry.coordinates.map((el:any, j: number) => {
@@ -67,7 +69,7 @@ export const UnivariateMap = (props:Props) => {
                           d={path}
                           stroke='#AAA'
                           strokeWidth={0.25}
-                          fill={selectedValue === 'All' ? Data[index].AMP || Data[index].Planned ? '#006EB5' : '#DDD' : Data[index][selectedValue] ? COLOR[Data[index][selectedValue] as number - 1] : '#DDD'}
+                          fill={selectedValue === 'All' ? Data[index].AMP && Data[index].Planned ? CATCOLOR[0] : Data[index].AMP ? CATCOLOR[1] : Data[index].Planned ? CATCOLOR[2] : '#EDEDED' : Data[index][selectedValue] ? COLOR[Data[index][selectedValue] as number - 1] : '#EDEDED'}
                         />
                       );
                     })

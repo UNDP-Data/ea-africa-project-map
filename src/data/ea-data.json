@@ -34,7 +34,8 @@
     {
       "Code": "BDI",
       "Country": "Burundi",
-      "Value": 9484636
+      "Value": 9484636,
+      "AMP": 3
     },
     {
       "Code": "CMR",
@@ -81,7 +82,8 @@
       "Code": "COD",
       "Country": "Democratic Republic of the Congo",
       "Value": 56484487,
-      "Planned": 1
+      "Planned": 1,
+      "AMP": 3
     },
     {
       "Code": "EGY",
@@ -158,7 +160,8 @@
     {
       "Code": "LBR",
       "Country": "Liberia",
-      "Value": 3328340
+      "Value": 3328340,
+      "AMP": 3
     },
     {
       "Code": "LBY",

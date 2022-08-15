@@ -190,6 +190,10 @@ const ColorBox = styled.div`
   margin-right: 0.5rem;
 `;
 
+const COLOR = ['#3a6b35', '#829d60', '#cbd18f'];
+
+const CATCOLOR = ['#0B5588', '#FBB719', '#88C59A'];
+
 const App = () => {
   const [value, setValue] = useState<'AMP' | 'All' | 'Planned'>('All');
   return (
@@ -222,16 +226,46 @@ const App = () => {
         *each circle represent 5 MilLion People
       </SubNote>
       <SubTitle>Targeted countries</SubTitle>
-      <KeyContainer>
-        <KeyEl>
-          <ColorBox style={{ backgroundColor: '#3a6b35' }} />
-          <div style={{ color: '#3a6b35' }}>Round 1</div>
-        </KeyEl>
-        <KeyEl>
-          <ColorBox style={{ backgroundColor: '#cbd18f' }} />
-          <div style={{ color: '#cbd18f' }}>Round 2</div>
-        </KeyEl>
-      </KeyContainer>
+      {
+        value === 'All'
+          ? (
+            <KeyContainer>
+              <KeyEl>
+                <ColorBox style={{ backgroundColor: CATCOLOR[0] }} />
+                <div style={{ color: CATCOLOR[0] }}>AO & AMP</div>
+              </KeyEl>
+              <KeyEl>
+                <ColorBox style={{ backgroundColor: CATCOLOR[1] }} />
+                <div style={{ color: CATCOLOR[1] }}>AMP Only</div>
+              </KeyEl>
+              <KeyEl>
+                <ColorBox style={{ backgroundColor: CATCOLOR[2] }} />
+                <div style={{ color: CATCOLOR[2] }}>AO Only</div>
+              </KeyEl>
+            </KeyContainer>
+          )
+          : (
+            <KeyContainer>
+              <KeyEl>
+                <ColorBox style={{ backgroundColor: COLOR[0] }} />
+                <div style={{ color: COLOR[0] }}>Round 1</div>
+              </KeyEl>
+              <KeyEl>
+                <ColorBox style={{ backgroundColor: COLOR[1] }} />
+                <div style={{ color: COLOR[1] }}>Round 2</div>
+              </KeyEl>
+              {
+                value === 'AMP'
+                  ? (
+                    <KeyEl>
+                      <ColorBox style={{ backgroundColor: COLOR[2] }} />
+                      <div style={{ color: COLOR[2] }}>Round 3</div>
+                    </KeyEl>
+                  ) : null
+              }
+            </KeyContainer>
+          )
+      }
       <UnivariateMap selectedValue={value} />
     </>
   );
