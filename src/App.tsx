@@ -1,9 +1,12 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { useState } from 'react';
 import { Radio } from 'antd';
+import { format } from 'd3-format';
 import 'antd/dist/antd.css';
+import sumBy from 'lodash.sumby';
 import { UnivariateMap } from './UnivariateMap';
 import { UnitChart } from './UnitChart';
+import Data from './data/ea-data.json';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -141,6 +144,14 @@ const TitleEl = styled.div`
   color: var(--primary-blue);
 `;
 
+const KeyTitleEl = styled.div`
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  margin: 1rem 0;
+  text-align: center;
+`;
+
 const SubNote = styled.div`
   font-family: 'Proxima Nova';
   font-size: 1.4rem;
@@ -193,6 +204,38 @@ const ColorBox = styled.div`
 const COLOR = ['#3a6b35', '#829d60', '#cbd18f'];
 
 const CATCOLOR = ['#0B5588', '#FBB719', '#88C59A'];
+
+const TableEl = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const ColumnEl = styled.div`
+  font-size: 1.4rem;
+  width: calc(33.33% - 2rem);
+  padding: 2rem;
+  min-width: 24rem;
+`;
+
+const RowEl = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const ColumnTitleEl = styled.div`
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.6rem;
+  width: 100%;
+  border-bottom: 1px solid var(--black-450);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 const App = () => {
   const [value, setValue] = useState<'AMP' | 'All' | 'Planned'>('All');
@@ -267,6 +310,198 @@ const App = () => {
           )
       }
       <UnivariateMap selectedValue={value} />
+      <KeyTitleEl>Potential Beneficiaries</KeyTitleEl>
+      {
+        value === 'All'
+          ? (
+            <TableEl>
+              <ColumnEl style={{ color: CATCOLOR[0] }}>
+                <ColumnTitleEl>
+                  <div>
+                    AO & AMP
+                  </div>
+                  <div className='bold'>
+                    {format('.2s')(sumBy(Data.filter((d) => d.AMP && d.Planned), 'Value'))}
+                  </div>
+                </ColumnTitleEl>
+                {
+                  Data.filter((d) => d.AMP && d.Planned).map((d, i) => (
+                    <RowEl key={i}>
+                      <div>
+                        {d.Country}
+                      </div>
+                      <div className='bold'>
+                        {format('.2s')(d.Value)}
+                      </div>
+                    </RowEl>
+                  ))
+                }
+              </ColumnEl>
+              <ColumnEl style={{ color: CATCOLOR[1] }}>
+                <ColumnTitleEl>
+                  <div>
+                    AMP only
+                  </div>
+                  <div className='bold'>
+                    {format('.2s')(sumBy(Data.filter((d) => d.AMP && !d.Planned), 'Value'))}
+                  </div>
+                </ColumnTitleEl>
+                {
+                  Data.filter((d) => d.AMP && !d.Planned).map((d, i) => (
+                    <RowEl key={i}>
+                      <div>
+                        {d.Country}
+                      </div>
+                      <div className='bold'>
+                        {format('.2s')(d.Value)}
+                      </div>
+                    </RowEl>
+                  ))
+                }
+              </ColumnEl>
+              <ColumnEl style={{ color: CATCOLOR[2] }}>
+                <ColumnTitleEl>
+                  <div>
+                    AO Only
+                  </div>
+                  <div className='bold'>
+                    {format('.2s')(sumBy(Data.filter((d) => !d.AMP && d.Planned), 'Value'))}
+                  </div>
+                </ColumnTitleEl>
+                {
+                  Data.filter((d) => !d.AMP && d.Planned).map((d, i) => (
+                    <RowEl key={i}>
+                      <div>
+                        {d.Country}
+                      </div>
+                      <div className='bold'>
+                        {format('.2s')(d.Value)}
+                      </div>
+                    </RowEl>
+                  ))
+                }
+              </ColumnEl>
+            </TableEl>
+          )
+          : value === 'AMP'
+            ? (
+              <TableEl>
+                <ColumnEl style={{ color: COLOR[0] }}>
+                  <ColumnTitleEl>
+                    <div>
+                      AMP Round 1
+                    </div>
+                    <div className='bold'>
+                      {format('.2s')(sumBy(Data.filter((d) => d.AMP === 1), 'Value'))}
+                    </div>
+                  </ColumnTitleEl>
+                  {
+                    Data.filter((d) => d.AMP === 1).map((d, i) => (
+                      <RowEl key={i}>
+                        <div>
+                          {d.Country}
+                        </div>
+                        <div className='bold'>
+                          {format('.2s')(d.Value)}
+                        </div>
+                      </RowEl>
+                    ))
+                  }
+                </ColumnEl>
+                <ColumnEl style={{ color: COLOR[1] }}>
+                  <ColumnTitleEl>
+                    <div>
+                      AMP Round 2
+                    </div>
+                    <div className='bold'>
+                      {format('.2s')(sumBy(Data.filter((d) => d.AMP === 2), 'Value'))}
+                    </div>
+                  </ColumnTitleEl>
+                  {
+                    Data.filter((d) => d.AMP === 2).map((d, i) => (
+                      <RowEl key={i}>
+                        <div>
+                          {d.Country}
+                        </div>
+                        <div className='bold'>
+                          {format('.2s')(d.Value)}
+                        </div>
+                      </RowEl>
+                    ))
+                  }
+                </ColumnEl>
+                <ColumnEl style={{ color: COLOR[2] }}>
+                  <ColumnTitleEl>
+                    <div>
+                      AMP Round 3
+                    </div>
+                    <div className='bold'>
+                      {format('.2s')(sumBy(Data.filter((d) => d.AMP === 3), 'Value'))}
+                    </div>
+                  </ColumnTitleEl>
+                  {
+                    Data.filter((d) => d.AMP === 3).map((d, i) => (
+                      <RowEl key={i}>
+                        <div>
+                          {d.Country}
+                        </div>
+                        <div className='bold'>
+                          {format('.2s')(d.Value)}
+                        </div>
+                      </RowEl>
+                    ))
+                  }
+                </ColumnEl>
+              </TableEl>
+            ) : (
+              <TableEl>
+                <ColumnEl style={{ color: COLOR[0] }}>
+                  <ColumnTitleEl>
+                    <div>
+                      AO Round 1
+                    </div>
+                    <div className='bold'>
+                      {format('.2s')(sumBy(Data.filter((d) => d.Planned === 1), 'Value'))}
+                    </div>
+                  </ColumnTitleEl>
+                  {
+                    Data.filter((d) => d.Planned === 1).map((d, i) => (
+                      <RowEl key={i}>
+                        <div>
+                          {d.Country}
+                        </div>
+                        <div className='bold'>
+                          {format('.2s')(d.Value)}
+                        </div>
+                      </RowEl>
+                    ))
+                  }
+                </ColumnEl>
+                <ColumnEl style={{ color: COLOR[1] }}>
+                  <ColumnTitleEl>
+                    <div>
+                      AO Round 2
+                    </div>
+                    <div className='bold'>
+                      {format('.2s')(sumBy(Data.filter((d) => d.Planned === 2), 'Value'))}
+                    </div>
+                  </ColumnTitleEl>
+                  {
+                    Data.filter((d) => d.Planned === 2).map((d, i) => (
+                      <RowEl key={i}>
+                        <div>
+                          {d.Country}
+                        </div>
+                        <div className='bold'>
+                          {format('.2s')(d.Value)}
+                        </div>
+                      </RowEl>
+                    ))
+                  }
+                </ColumnEl>
+              </TableEl>
+            )
+      }
     </>
   );
 };

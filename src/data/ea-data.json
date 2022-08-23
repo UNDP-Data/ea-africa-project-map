@@ -80,7 +80,7 @@
     },
     {
       "Code": "COD",
-      "Country": "Democratic Republic of the Congo",
+      "Country": "DR Congo",
       "Value": 56484487,
       "Planned": 1,
       "AMP": 3
@@ -313,18 +313,22 @@
     },
     {
       "Code": "REU",
-      "Country": "Reunion"
+      "Country": "Reunion",
+      "Value": 0
     },
     {
       "Code": "MYT",
-      "Country": "Mayotte"
+      "Country": "Mayotte",
+      "Value": 0
     },
     {
       "Code": "SHN",
-      "Country": "Saint Helena"
+      "Country": "Saint Helena",
+      "Value": 0
     },
     {
       "Code": "ESH",
-      "Country": "Western Sahara"
+      "Country": "Western Sahara",
+      "Value": 0
     }
   ]
