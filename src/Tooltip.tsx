@@ -69,7 +69,7 @@ export const Tooltip = (props: Props) => {
         !data.AMP && !data.AO ? (
           <>
             <TooltipBody>
-              Not a part of any effort
+              Not a part of AO nor AMP
             </TooltipBody>
           </>
         ) : (
