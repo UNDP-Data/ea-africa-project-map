@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Radio } from 'antd';
 import 'antd/dist/antd.css';
 import { UnivariateMap } from './UnivariateMap';
-import { UnitChart } from './UnitChart';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -150,26 +149,6 @@ const KeyTitleEl = styled.div`
   text-align: center;
 `;
 
-const SubNote = styled.div`
-  font-family: 'Proxima Nova';
-  font-size: 1.4rem;
-  line-height: 1.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: var(--black-500);
-  margin: 1rem 0 2rem 0;
-  text-align: center;
-`;
-
-const BannerInfo = styled.div`
-  font-family: 'Proxima Nova';
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-  color: var(--black-700);
-  margin: 1rem 0 2rem 0;
-  text-align: center;
-`;
-
 const SubTitle = styled.div`
   margin: 4rem 0 2rem 0;
   font-weight: 700;
@@ -221,19 +200,6 @@ const App = () => {
           <Radio.Button className='radioLabel' value='Planned'>Planned Efforts (AO)</Radio.Button>
         </Radio.Group>
       </RadioEl>
-      <BannerInfo>
-        Total Beneficiaries:
-        {' '}
-        <span className='bold'>
-          {value === 'All' ? '179.5 Million' : value === 'AMP' ? '29.5 Million' : '150 Million' }
-        </span>
-        {' '}
-        out of 500 million
-      </BannerInfo>
-      <UnitChart selectedValue={value} />
-      <SubNote>
-        *each circle represent 5 MilLion People
-      </SubNote>
       <SubTitle>Targeted countries</SubTitle>
       {
         value === 'All'
