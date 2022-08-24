@@ -146,9 +146,10 @@ const TitleEl = styled.div`
 
 const KeyTitleEl = styled.div`
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   line-height: 3rem;
-  margin: 1rem 0;
+  font-style: italic;
+  margin: -1rem 0 3rem 0;
   text-align: center;
 `;
 
@@ -309,8 +310,9 @@ const App = () => {
             </KeyContainer>
           )
       }
+
+      <KeyTitleEl>Height of bars represent no. of potential beneficiaries</KeyTitleEl>
       <UnivariateMap selectedValue={value} />
-      <KeyTitleEl>Potential Beneficiaries</KeyTitleEl>
       {
         value === 'All'
           ? (
