@@ -30,6 +30,8 @@ const GlobalStyle = createGlobalStyle`
     --shadow-top: 0 -10px 13px -3px rgb(9 105 250 / 15%);
     --shadow-right: 10px 0px 13px -3px rgb(9 105 250 / 5%);
     --shadow-left: -10px 0px 13px -3px rgb(9 105 250 / 15%);
+    --dark-azure: #00C1FF;
+    --dark-green: #59BA47;
   }
   
   html { 
@@ -140,15 +142,6 @@ const TitleEl = styled.div`
   color: var(--primary-blue);
 `;
 
-const KeyTitleEl = styled.div`
-  font-weight: 700;
-  font-size: 1.4rem;
-  line-height: 3rem;
-  font-style: italic;
-  margin: -1rem 0 3rem 0;
-  text-align: center;
-`;
-
 const SubTitle = styled.div`
   margin: 4rem 0 2rem 0;
   font-weight: 700;
@@ -180,14 +173,15 @@ const ColorBox = styled.div`
 
 const COLOR = ['#3a6b35', '#829d60', '#cbd18f'];
 
-const CATCOLOR = ['#0B5588', '#FBB719', '#88C59A'];
+// const CATCOLOR = ['#0B5588', '#FBB719', '#88C59A'];
+const CATCOLOR = ['#59BA47', '#FBC412', '#60D4F2'];
 
 const App = () => {
   const [value, setValue] = useState<'AMP' | 'All' | 'Planned'>('All');
   return (
     <>
       <GlobalStyle />
-      <TitleEl>Bringing Electricity to 500 Million People</TitleEl>
+      <TitleEl>Bringing Electricity to Half a Billion</TitleEl>
       <RadioEl>
         <Radio.Group
           onChange={(val) => { setValue(val.target.value); }}
@@ -242,7 +236,6 @@ const App = () => {
           )
       }
 
-      <KeyTitleEl>Height of bars represent no. of potential beneficiaries</KeyTitleEl>
       <UnivariateMap selectedValue={value} />
     </>
   );
