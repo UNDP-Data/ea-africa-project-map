@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import styled from 'styled-components';
 import { geoMercator } from 'd3-geo';
 import { scaleLinear } from 'd3-scale';
 import World from './data/worldMap.json';
@@ -14,10 +13,6 @@ const COLOR = ['#3a6b35', '#829d60', '#cbd18f'];
 
 const CATCOLOR = ['#0B5588', '#FBB719', '#88C59A'];
 
-const El = styled.div`
-  display: flex;
-  justify-content: center;
-`;
 export const UnivariateMap = (props:Props) => {
   const { selectedValue } = props;
   const [hoverData, setHoverData] = useState<any>(undefined);
@@ -28,7 +23,7 @@ export const UnivariateMap = (props:Props) => {
   const heightScale = scaleLinear().domain([0, 90000000]).range([0, 190]);
   const projection = geoMercator().rotate([0, 0]).scale(325).translate([115, 230]);
   return (
-    <El>
+    <div className='flex-div flex-hor-align-center'>
       <svg width='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`} ref={mapSvg}>
         <g ref={mapG}>
           {
@@ -160,6 +155,6 @@ export const UnivariateMap = (props:Props) => {
       {
         hoverData ? <Tooltip data={hoverData} /> : null
       }
-    </El>
+    </div>
   );
 };
