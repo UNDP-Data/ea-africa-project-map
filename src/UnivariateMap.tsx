@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react';
 import { geoMercator } from 'd3-geo';
-import { scaleLinear } from 'd3-scale';
 import World from './data/worldMap.json';
 import Data from './data/ea-data.json';
 import { Tooltip } from './Tooltip';
@@ -11,7 +10,7 @@ interface Props {
 
 const COLOR = ['#3a6b35', '#829d60', '#cbd18f'];
 
-const CATCOLOR = ['#0B5588', '#FBB719', '#88C59A'];
+const CATCOLOR = ['#59BA47', '#FBC412', '#60D4F2'];
 
 export const UnivariateMap = (props:Props) => {
   const { selectedValue } = props;
@@ -20,7 +19,6 @@ export const UnivariateMap = (props:Props) => {
   const svgHeight = 475;
   const mapSvg = useRef<SVGSVGElement>(null);
   const mapG = useRef<SVGGElement>(null);
-  const heightScale = scaleLinear().domain([0, 90000000]).range([0, 190]);
   const projection = geoMercator().rotate([0, 0]).scale(325).translate([115, 230]);
   return (
     <div className='flex-div flex-hor-align-center'>
@@ -97,55 +95,6 @@ export const UnivariateMap = (props:Props) => {
                       );
                     })
                   }
-                </g>
-              );
-            })
-          }
-        </g>
-        <g>
-          {
-            (World as any).features.map((d: any, i: number) => {
-              const index = Data.findIndex((el) => el.Code === d.properties.ISO3);
-              if ((index === -1) || d.properties.NAME === 'Antarctica') return null;
-              if (selectedValue === 'All' && !Data[index].AMP && !Data[index].Planned) return null;
-              if (selectedValue !== 'All' && !Data[index][selectedValue]) return null;
-              return (
-                <g
-                  key={i}
-                  opacity={hoverData ? hoverData.country === Data[index].Country ? 1 : 0.1 : 1}
-                  onMouseEnter={(event) => {
-                    setHoverData({
-                      country: Data[index].Country,
-                      value: Data[index].Value,
-                      AMP: Data[index].AMP,
-                      AO: Data[index].Planned,
-                      xPosition: event.clientX,
-                      yPosition: event.clientY,
-                    });
-                  }}
-                  onMouseMove={(event) => {
-                    setHoverData({
-                      country: Data[index].Country,
-                      value: Data[index].Value,
-                      AMP: Data[index].AMP,
-                      AO: Data[index].Planned,
-                      xPosition: event.clientX,
-                      yPosition: event.clientY,
-                    });
-                  }}
-                  onMouseLeave={() => {
-                    setHoverData(undefined);
-                  }}
-                >
-                  <rect
-                    x={(projection([d.properties.LON, d.properties.LAT]) as [number, number])[0] - 2}
-                    y={(projection([d.properties.LON, d.properties.LAT]) as [number, number])[1] - heightScale(Data[index].Value)}
-                    width={4}
-                    height={heightScale(Data[index].Value)}
-                    fill='#006EB5'
-                    stroke='#fff'
-                    strokeWidth={0.5}
-                  />
                 </g>
               );
             })

@@ -10,7 +10,7 @@ const ColorBox = styled.div`
 
 const COLOR = ['#3a6b35', '#829d60', '#cbd18f'];
 
-const CATCOLOR = ['#0B5588', '#FBB719', '#88C59A'];
+const CATCOLOR = ['#59BA47', '#FBC412', '#60D4F2'];
 
 const App = () => {
   const [value, setValue] = useState<'AMP' | 'All' | 'Planned'>('All');
@@ -20,7 +20,7 @@ const App = () => {
       <div style={{ width: '100%' }} className='flex-div flex-hor-align-center margin-bottom-07'>
         <Segmented
           value={value}
-          className='undp-segmented'
+          className='undp-segmented-small'
           options={[
             { label: 'All (AMP + AO)', value: 'All' },
             { label: 'Ongoing Efforts (AMP)', value: 'AMP' },
@@ -72,7 +72,6 @@ const App = () => {
             </div>
           )
       }
-      <p className='undp-typography italics margin-top-05 margin-bottom-07' style={{ textAlign: 'center' }}>Height of bars represent no. of potential beneficiaries</p>
       <UnivariateMap selectedValue={value} />
     </div>
   );
