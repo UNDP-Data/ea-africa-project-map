@@ -16,7 +16,7 @@ const App = () => {
   const [value, setValue] = useState<'AMP' | 'All' | 'Planned'>('All');
   return (
     <div className='undp-container'>
-      <h4 className='undp-typography margin-bottom-07 bold' style={{ color: 'var(--blue-600)', textAlign: 'center' }}>Bringing Electricity to 500 Million People</h4>
+      <h4 className='undp-typography margin-bottom-07 bold' style={{ textAlign: 'center' }}>Bringing Electricity to 500 Million People</h4>
       <div style={{ width: '100%' }} className='flex-div flex-hor-align-center margin-bottom-07'>
         <Segmented
           value={value}
@@ -31,11 +31,10 @@ const App = () => {
           onChange={(val) => { setValue(val as 'AMP' | 'All' | 'Planned'); }}
         />
       </div>
-      <h6 className='undp-typography margin-bottom-03' style={{ textAlign: 'center' }}>Targeted countries</h6>
       {
         value === 'All'
           ? (
-            <div className='flex-div gap-07 flex-hor-align-center'>
+            <div className='flex-div gap-07 flex-hor-align-center margin-bottom-05'>
               <div className='flex-div flex-vert-align-center gap-02'>
                 <ColorBox style={{ backgroundColor: CATCOLOR[0] }} />
                 <div style={{ color: CATCOLOR[0] }}>AO & AMP</div>
@@ -51,7 +50,7 @@ const App = () => {
             </div>
           )
           : (
-            <div className='flex-div gap-07 flex-hor-align-center'>
+            <div className='flex-div gap-07 flex-hor-align-center margin-bottom-05'>
               <div className='flex-div flex-vert-align-center gap-02'>
                 <ColorBox style={{ backgroundColor: COLOR[0] }} />
                 <div style={{ color: COLOR[0] }}>Round 1</div>
