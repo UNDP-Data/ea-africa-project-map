@@ -22,7 +22,7 @@ const TooltipEl = styled.div<TooltipElProps>`
   word-wrap: break-word;
   top: ${(props) => (props.verticalAlignment === 'bottom' ? props.y - 40 : props.y + 40)}px;
   left: ${(props) => (props.horizontalAlignment === 'left' ? props.x - 20 : props.x + 20)}px;
-  max-width: 15rem;
+  max-width: 16rem;
   transform: ${(props) => `translate(${props.horizontalAlignment === 'left' ? '-100%' : '0%'},${props.verticalAlignment === 'top' ? '-100%' : '0%'})`};
 `;
 
@@ -32,13 +32,13 @@ export const Tooltip = (props: Props) => {
   } = props;
   return (
     <TooltipEl x={data.xPosition} y={data.yPosition} verticalAlignment={data.yPosition > window.innerHeight / 2 ? 'top' : 'bottom'} horizontalAlignment={data.xPosition > window.innerWidth / 2 ? 'left' : 'right'}>
-      <h2 className='bold margin-top-00 margin-bottom-05'>
+      <h4 className='undp-typography margin-top-00 margin-bottom-05'>
         {data.country}
-      </h2>
+      </h4>
       {
         !data.AMP && !data.AO ? (
           <>
-            <p className='undp-typography bold'>
+            <p className='undp-typography'>
               Not a part of AO nor AMP
             </p>
           </>

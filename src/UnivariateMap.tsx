@@ -8,7 +8,7 @@ interface Props {
   selectedValue: 'AMP' | 'All' | 'Planned';
 }
 
-const COLOR = ['#3a6b35', '#829d60', '#cbd18f'];
+const COLOR = ['#A71C04', '#D64513', '#EB8033'];
 
 const CATCOLOR = ['#59BA47', '#FBC412', '#60D4F2'];
 
@@ -72,7 +72,7 @@ export const UnivariateMap = (props:Props) => {
                         <path
                           key={j}
                           d={masterPath}
-                          stroke='#AAA'
+                          stroke='#888'
                           strokeWidth={0.25}
                           fill={selectedValue === 'All' ? Data[index].AMP && Data[index].Planned ? CATCOLOR[0] : Data[index].AMP ? CATCOLOR[1] : Data[index].Planned ? CATCOLOR[2] : '#EDEDED' : Data[index][selectedValue] ? COLOR[Data[index][selectedValue] as number - 1] : '#EDEDED'}
                         />
@@ -88,7 +88,7 @@ export const UnivariateMap = (props:Props) => {
                         <path
                           key={j}
                           d={path}
-                          stroke='#AAA'
+                          stroke='#888'
                           strokeWidth={0.25}
                           fill={selectedValue === 'All' ? Data[index].AMP && Data[index].Planned ? CATCOLOR[0] : Data[index].AMP ? CATCOLOR[1] : Data[index].Planned ? CATCOLOR[2] : '#EDEDED' : Data[index][selectedValue] ? COLOR[Data[index][selectedValue] as number - 1] : '#EDEDED'}
                         />
