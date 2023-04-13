@@ -22,7 +22,7 @@ const TooltipEl = styled.div<TooltipElProps>`
   word-wrap: break-word;
   top: ${(props) => (props.verticalAlignment === 'bottom' ? props.y - 40 : props.y + 40)}px;
   left: ${(props) => (props.horizontalAlignment === 'left' ? props.x - 20 : props.x + 20)}px;
-  max-width: 16rem;
+  max-width: 19rem;
   transform: ${(props) => `translate(${props.horizontalAlignment === 'left' ? '-100%' : '0%'},${props.verticalAlignment === 'top' ? '-100%' : '0%'})`};
 `;
 
@@ -30,6 +30,7 @@ export const Tooltip = (props: Props) => {
   const {
     data,
   } = props;
+
   return (
     <TooltipEl x={data.xPosition} y={data.yPosition} verticalAlignment={data.yPosition > window.innerHeight / 2 ? 'top' : 'bottom'} horizontalAlignment={data.xPosition > window.innerWidth / 2 ? 'left' : 'right'}>
       <h4 className='undp-typography margin-top-00 margin-bottom-05'>
@@ -39,18 +40,18 @@ export const Tooltip = (props: Props) => {
         !data.AMP && !data.AO ? (
           <>
             <p className='undp-typography'>
-              Not a part of AO nor AMP
+              {data.labels.none}
             </p>
           </>
         ) : (
           <>
             <p className='undp-typography'>
-              Part of:
+              {`${data.labels.partOf}:`}
               {' '}
-              <span className='bold'>{data.AMP && data.AO ? 'AO & AMP both' : data.AMP ? 'AMP Only' : 'AO Only'}</span>
+              <span className='bold'>{data.AMP && data.AO ? data.labels.AoAmp : data.AMP ? data.labels.AmpOnly : data.labels.AoOnly}</span>
             </p>
             <p className='undp-typography'>
-              Potential Beneficiaries:
+              {`${data.labels.potentialBeneficiaries}:`}
               {' '}
               <span className='bold'>{format('0.2s')(data.value)}</span>
             </p>

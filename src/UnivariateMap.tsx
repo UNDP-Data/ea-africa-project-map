@@ -6,6 +6,7 @@ import { Tooltip } from './Tooltip';
 
 interface Props {
   selectedValue: 'AMP' | 'All' | 'Planned';
+  labelsLang: object;
 }
 
 const COLOR = ['#A71C04', '#D64513', '#EB8033'];
@@ -13,7 +14,12 @@ const COLOR = ['#A71C04', '#D64513', '#EB8033'];
 const CATCOLOR = ['#59BA47', '#FBC412', '#60D4F2'];
 
 export const UnivariateMap = (props:Props) => {
-  const { selectedValue } = props;
+  const {
+    selectedValue,
+    labelsLang,
+  } = props;
+    // eslint-disable-next-line no-console
+  console.log('language- labels', labelsLang);
   const [hoverData, setHoverData] = useState<any>(undefined);
   const svgWidth = 420;
   const svgHeight = 475;
@@ -40,6 +46,7 @@ export const UnivariateMap = (props:Props) => {
                       AO: Data[index].Planned,
                       xPosition: event.clientX,
                       yPosition: event.clientY,
+                      labels: labelsLang,
                     });
                   }}
                   onMouseMove={(event) => {
@@ -50,6 +57,7 @@ export const UnivariateMap = (props:Props) => {
                       AO: Data[index].Planned,
                       xPosition: event.clientX,
                       yPosition: event.clientY,
+                      labels: labelsLang,
                     });
                   }}
                   onMouseLeave={() => {

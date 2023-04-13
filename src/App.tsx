@@ -20,15 +20,21 @@ const labels = {
     AoAmp: 'AO & AMP',
     AoOnly: 'AO Only',
     AmpOnly: 'AMP Only',
+    none: 'Not a part of AO nor AMP',
+    partOf: 'Part of',
+    potentialBeneficiaries: 'Potential Beneficiaries',
   },
   fr: {
-    All: 'All (PMA + OA)',
+    All: 'Tout (PMA + OA)',
     AMP: 'Efforts en cours (PMA)',
     Planned: 'Efforts planifiés (OA)',
     Round: 'Série',
     AoAmp: 'OA & PMA',
     AoOnly: 'OA Uniquement',
     AmpOnly: 'PMA Uniquement',
+    none: 'Ne fait pas partie d\'OA ni d\'PMA',
+    partOf: 'Partie de',
+    potentialBeneficiaries: 'Bénéficiaires potentiels',
   },
   es: {
     All: 'Ambos (PMA + OA)',
@@ -38,6 +44,9 @@ const labels = {
     AoAmp: 'OA & PMA',
     AoOnly: 'Solo OA',
     AmpOnly: 'Solo PMA',
+    none: 'No es parte de OA ni PMA',
+    partOf: 'Parte de',
+    potentialBeneficiaries: 'Beneficiarios potenciales',
   },
 };
 
@@ -45,7 +54,8 @@ const COLOR = ['#A71C04', '#D64513', '#EB8033'];
 const CATCOLOR = ['#59BA47', '#FBC412', '#60D4F2'];
 
 const App = (props: Props) => {
-  const { language } = props;
+  let { language } = props;
+  if (!Object.keys(labels).includes(language)) language = 'en';
   const [value, setValue] = useState<'AMP' | 'All' | 'Planned'>('All');
   return (
     <div className='undp-container'>
@@ -109,7 +119,7 @@ const App = (props: Props) => {
             </div>
           )
       }
-      <UnivariateMap selectedValue={value} />
+      <UnivariateMap selectedValue={value} labelsLang={labels[language]} />
     </div>
   );
 };

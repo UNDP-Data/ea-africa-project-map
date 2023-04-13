@@ -28,6 +28,7 @@ const getLang = (embedSelector: string) => {
 const container = getEl('[data-bucket-embed]');
 const root = createRoot(container!); // createRoot(container!) if you use TypeScript
 root.render(<App language={getLang('[data-bucket-embed]') || ''} />);
+// root.render(<App language='fr' />); // for testing
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
