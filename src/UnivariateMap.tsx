@@ -9,7 +9,7 @@ interface Props {
   labelsLang: object;
 }
 
-const COLOR = ['#A71C04', '#D64513', '#EB8033'];
+const COLOR = ['#005396', '#0091A9', '#5FCDA1'];
 
 const CATCOLOR = ['#59BA47', '#FBC412', '#60D4F2'];
 
@@ -18,8 +18,6 @@ export const UnivariateMap = (props:Props) => {
     selectedValue,
     labelsLang,
   } = props;
-    // eslint-disable-next-line no-console
-  console.log('language- labels', labelsLang);
   const [hoverData, setHoverData] = useState<any>(undefined);
   const svgWidth = 420;
   const svgHeight = 475;
