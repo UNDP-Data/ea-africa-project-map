@@ -50,7 +50,7 @@ const labels = {
   },
 };
 
-const COLOR = ['#A71C04', '#D64513', '#EB8033'];
+const COLOR = ['#005396', '#0091A9', '#5FCDA1'];
 const CATCOLOR = ['#59BA47', '#FBC412', '#60D4F2'];
 
 const App = (props: Props) => {
